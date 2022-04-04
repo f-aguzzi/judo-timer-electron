@@ -1,8 +1,8 @@
 {
-  "name": "electron-react-typescript-template",
-  "productName": "electron-react-typescript-template",
-  "version": "1.0.0",
-  "description": "My Electron application description",
+  "name": "judo-timer-electron",
+  "productName": "judo-timer-electron",
+  "version": "0.0.1",
+  "description": "Timer for judo competitions",
   "main": ".webpack/main",
   "scripts": {
     "start": "electron-forge start",
@@ -12,7 +12,7 @@
     "lint": "eslint --ext .ts,.tsx ."
   },
   "keywords": [],
-  "author": "federicoaguzzi",
+  "author": "Federico Aguzzi",
   "license": "MIT",
   "config": {
     "forge": {
@@ -81,7 +81,7 @@
     "postcss": "^8.4.12",
     "postcss-loader": "^6.2.1",
     "style-loader": "^3.0.0",
-    "tailwindcss": "2.2.19",
+    "tailwindcss": "3.0.23",
     "ts-loader": "^9.2.2",
     "typescript": "~4.5.4"
   },
