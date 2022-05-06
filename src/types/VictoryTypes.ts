@@ -11,4 +11,5 @@ export enum VictoryType {
     WazaAri,
     WazaAriAwaSete,
     HansokuMake,
+    GoldenScore,
 }

@@ -6,16 +6,18 @@ interface SettingsBarProps {
     totalTime: number;
     wazaariTime: number;
     ipponTime: number;
+    goldenScore: boolean;
 
     setTotalTime: React.Dispatch<React.SetStateAction<number>>;
     setWazaariTime: React.Dispatch<React.SetStateAction<number>>;
     setIpponTime: React.Dispatch<React.SetStateAction<number>>;
+    setGoldenScore: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 function SettingsBar({ 
     toggleSettings,
-    totalTime, wazaariTime, ipponTime, 
-    setTotalTime, setWazaariTime, setIpponTime 
+    totalTime, wazaariTime, ipponTime, goldenScore,
+    setTotalTime, setWazaariTime, setIpponTime, setGoldenScore
     }: SettingsBarProps) {
 
     const bar = () => {
@@ -48,6 +50,14 @@ function SettingsBar({
                                 className="rounded-md bg-zinc-200 text-center"
                                 placeholder={ ipponTime.toString() }
                             />
+                        </div>
+                        <div className="m-2">
+                            <p className="text-xl">Golden Score ⚔️: {goldenScore ? "✅" : "⛔️"} </p>
+                            <div className="grid grid-cols-2">
+                                <button className="text-2xl" onClick={() => setGoldenScore(false)}> ⛔️ </button>
+                                <button className="text-2xl" onClick={() => setGoldenScore(true)}> ✅ </button>
+                            </div>
+                            
                         </div>
                     </div>
                 </div>

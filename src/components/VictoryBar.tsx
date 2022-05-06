@@ -10,9 +10,11 @@ function VictoryBar({ victory, winner }: VictoryBarProps) {
 
     const winnerSide = () => {
         if (winner === Winner.White) {
-            return " ⬅️ ";
+            return " ⬅️  ";
         } else if (winner === Winner.Red) {
             return " ➡️ ";
+        } else {
+            return "  "
         }
     }
 
@@ -31,10 +33,15 @@ function VictoryBar({ victory, winner }: VictoryBarProps) {
         } else if (winner === Winner.White && victory === VictoryType.HansokuMake) {
             return "Hansoku Make 🔴 "
         }
+
+        // Golden Score
+        if (victory === VictoryType.GoldenScore) {
+            return "Golden Score"
+        }
     }
 
     const victoryCard = () => {
-        if (victory !== VictoryType.None) {
+        if (victory !== VictoryType.None && victory !== VictoryType.GoldenScore ) {
             return (
             <div className="bg-zinc-100 rounded-lg p-2">
                 <p className="text-6xl p-4">🏆</p>
@@ -42,6 +49,15 @@ function VictoryBar({ victory, winner }: VictoryBarProps) {
                 <br />
                 <p className="text-xl text-zinc-700 p-4"> { causeOfVictory() } </p>
             </div>
+            )
+        } else if (victory === VictoryType.GoldenScore) {
+            return (
+                <div className="bg-zinc-100 rounded-lg p-2">
+                    <p className="text-6xl p-4">⚔️</p>
+                    <p className="text-3xl"> { winnerSide() } </p>
+                    <br />
+                    <p className="text-xl text-zinc-700 p-4"> { causeOfVictory() } </p>
+                </div>
             )
         }
     }

@@ -12,6 +12,7 @@ function JudoApp() {
 	const [totalTime, setTotalTime] = useState(120);
 	const [wazaariTime, setWazaariTime] = useState(10);
 	const [ipponTime, setIpponTime] = useState(20);
+	const [goldenScore, setGoldenScore] = useState(false);
 
 	// State
 	const [seconds, setSeconds] = useState(totalTime);
@@ -102,6 +103,13 @@ function JudoApp() {
 				setVictory(VictoryType.WazaAri);
 				setWinner(Winner.Red);
 			}
+			if (goldenScore) {
+				if (wazaari1 == 0 && wazaari2 == 0 && ippon1 == 0 && ippon2 == 0) {
+					setVictory(VictoryType.GoldenScore);
+					setWinner(Winner.None);
+				}
+			}
+			
 			// Stop the clock
 			return;
 		}
@@ -222,10 +230,12 @@ function JudoApp() {
 					totalTime={totalTime}
 					wazaariTime={wazaariTime}
 					ipponTime={ipponTime}
+					goldenScore={goldenScore}
 
 					setTotalTime={setTotalTime}
 					setWazaariTime={setWazaariTime}
 					setIpponTime={setIpponTime}
+					setGoldenScore={setGoldenScore}
 				/>
 				<VictoryBar
 					victory={victory}
