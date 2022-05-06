@@ -13,6 +13,7 @@ on the referee's behalf.
 	- end of time with score advantage
 	- *ippon* or two *waza ari*
 	- *kosoko make*
+- automatic determination of golden score
 
 
 ## Structure
