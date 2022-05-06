@@ -24,4 +24,4 @@ and TailwindCSS support, which can be found at
 The package manager is `yarn`.
 
 The dev server can be started with `yarn start` and the executable can be
-built with `yarn build`.
+built with `yarn package`.
