@@ -93,6 +93,16 @@ function JudoApp() {
 		} else if (!active && seconds !== 0) {
 			clearInterval(interval);
 		} else if (active && seconds === 0) {
+			// End of the game with advantages
+			if (wazaari1 > wazaari2) {
+				setVictory(VictoryType.WazaAri);
+				setWinner(Winner.White);
+			}
+			if (wazaari2 > wazaari1) {
+				setVictory(VictoryType.WazaAri);
+				setWinner(Winner.Red);
+			}
+			// Stop the clock
 			return;
 		}
 		return () => clearInterval(interval);
