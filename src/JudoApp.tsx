@@ -71,6 +71,9 @@ function JudoApp() {
 		setShido2(0);
 		setOsaeKomi2_t(false);
 		setOsaeKomiTime2(0);
+
+		// Reset state on main process
+		window.api.reset();
 	}
 
 	const toggle = () => {
@@ -90,6 +93,7 @@ function JudoApp() {
 		if (active && seconds > 0) {
 			interval = setInterval(() => {
 				setSeconds(seconds => seconds - 1);
+				window.api.setTimer(seconds);
 		  	}, 1000);
 		} else if (!active && seconds !== 0) {
 			clearInterval(interval);
@@ -129,7 +133,9 @@ function JudoApp() {
 		} else if (osaeKomi1 && (active === false)) {
 			return;
 		}
-		return () => clearInterval(interval1);
+		return () => {
+			clearInterval(interval1);
+		}
 	}, [osaeKomi1, osaeKomiTime1, active]);
 
 	// OsaeKomi for red belt
@@ -217,6 +223,20 @@ function JudoApp() {
 			setWinner(Winner.White);
 		}
 	}, [shido1, shido2]);
+
+	// UseEffect to send data to main process
+	useEffect(() => {
+		window.api.setIppon1(ippon1);
+		window.api.setIppon2(ippon2);
+		window.api.setWazaari1(wazaari1);
+		window.api.setWazaari2(wazaari2);
+		window.api.setShido1(shido1);
+		window.api.setShido2(shido2);
+		window.api.setOsaekomi1(osaeKomi1);
+		window.api.setOsaekomi2(osaeKomi2);
+		window.api.setOsaekomiTimer1(osaeKomiTime1);
+		window.api.setOsaekomiTimer2(osaeKomiTime2);
+	}, [ippon1, ippon2, wazaari1, wazaari2, shido1, shido2, osaeKomi1, osaeKomi2, osaeKomiTime1, osaeKomiTime2]);
 
 	return (
     	<div className="App">

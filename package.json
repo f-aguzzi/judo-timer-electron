@@ -50,12 +50,18 @@
                 {
                   "html": "./src/index.html",
                   "js": "./src/main_renderer.ts",
-                  "name": "main_window"
+                  "name": "main_window",
+                  "preload": {
+                    "js": "./src/preload.ts"
+                  }
                 },
                 {
                   "html": "./src/index.html",
                   "js": "./src/secondary_renderer.ts",
-                  "name": "second_window"
+                  "name": "second_window",
+                  "preload": {
+                    "js": "./src/preload.ts"
+                  }
                 }
               ]
             }
