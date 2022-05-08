@@ -5,6 +5,7 @@ on the referee's behalf.
 
 ## Implemented functionalities
 
+- dual window (one control window for the operator, one display window for the electronic board)
 - adjustable timers
 - automatic assignment of victory
 - *osae komi* timer with automatic assignment of *waza ari* and *ippon*
