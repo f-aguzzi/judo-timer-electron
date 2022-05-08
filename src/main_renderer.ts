@@ -27,6 +27,6 @@
  */
 
 import './index.css';
-import './reactIndex'
+import './reactMain'
 
 console.log('👋 This message is being logged by "renderer.js", included via webpack');

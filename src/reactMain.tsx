@@ -1,10 +1,10 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
-import App from './App';
+import JudoApp from './JudoApp';
 
 function render() {
-  ReactDOM.render(<App />, document.body);
+  ReactDOM.render(<JudoApp />, document.body);
 }
 
 render();

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import SettingsBar from "./components/SettingsBar"
-import BottomBar from './components/BottomBar';
-import OsaeKomi from './components/OsaeKomi';
-import TopBar from './components/TopBar';
-import VictoryBar from './components/VictoryBar';
+import SettingsBar from "./main_components/SettingsBar"
+import BottomBar from './main_components/BottomBar';
+import OsaeKomi from './main_components/OsaeKomi';
+import TopBar from './main_components/TopBar';
+import VictoryBar from './main_components/VictoryBar';
 import { VictoryType, Winner } from './types/VictoryTypes';
 
 function JudoApp() {

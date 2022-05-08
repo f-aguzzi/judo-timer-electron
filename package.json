@@ -49,8 +49,13 @@
               "entryPoints": [
                 {
                   "html": "./src/index.html",
-                  "js": "./src/renderer.ts",
+                  "js": "./src/main_renderer.ts",
                   "name": "main_window"
+                },
+                {
+                  "html": "./src/index.html",
+                  "js": "./src/secondary_renderer.ts",
+                  "name": "second_window"
                 }
               ]
             }
